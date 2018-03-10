@@ -5,6 +5,7 @@ const stars = Array.from(document.getElementsByClassName('star'));
 const resetButton = document.getElementsByClassName('restart')[0];
 const popup = document.getElementById('popup');
 const closePopupButton = document.getElementById('closePopup');
+const movesInfo = document.getElementById('moves');
 
 // cards after shuffling
 let shuffledCards;
@@ -128,9 +129,10 @@ const handleCardClick = (e) => {
       });
       correctGuesses++;
       // check for win
-      if (correctGuesses === 3) {
+      if (correctGuesses === 1) {
         console.log('win!');
         togglePopup();
+        movesInfo.innerHTML = moves;
         return;
       }
       openCards.length = 0;
