@@ -1,98 +1,104 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Matching Game</title>
-    <meta name="description" content="">
-    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
-    <link rel="stylesheet" href="css/app.css">
+		<meta charset="utf-8" >
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Matching Game</title>
+		<meta name="description" content="">
+		<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+		<link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+		<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-  <!-- The Modal -->
-  <div id="popup" class="modal">
+	<!-- The Modal -->
+	<div id="popup" class="modal">
 
-    <!-- Modal content -->
-    <div class="modal-content">
-      <p>Excellent job, you won in <span id='moves'></span> moves!</p>
-      <button id="closePopup">&times;</button>
-    </div>
+		<!-- Modal content -->
+		<div class="modal-content">
+			<p>Excellent job, you won in <span id='moves'></span> moves!</p>
+			<p><span id='time-info'></span> <span id='rating-info'></span></p>
+			<p>Wanna play again?</p>        
+			<button id="playAgain">Yes</button>
+			<button id="notPlayAgain">No</button>
+		</div>
 
-  </div>
-  <!-- End of modal -->
+	</div>
+	<!-- End of modal -->
 
-    <div class="container">
-        <header>
-            <h1>Matching Game</h1>
-        </header>
+		<div class="container">
+				<header>
+						<h1>Matching Game</h1>
+				</header>
 
-        <section class="score-panel">
-        	<ul class="stars">
-        		<li class='star'><i class="fa fa-star"></i></li>
-        		<li class='star'><i class="fa fa-star"></i></li>
-        		<li class='star'><i class="fa fa-star"></i></li>
-        	</ul>
+				<section class="score-panel">
+					<ul class="stars">
+						<li class='star'><i class="fa fa-star"></i></li>
+						<li class='star'><i class="fa fa-star"></i></li>
+						<li class='star'><i class="fa fa-star"></i></li>
+						<li> Moves:	&#32;<span class="moves"> 3</span><li>
+					</ul>
 
-        	Moves:	&#32;<span class="moves"> 3</span>
+				<div class='timer'>
+					<i class="far fa-clock"></i> &#32; <span id='timer-display'>00:00</span>
+				</div>
 
-            <div class="restart">
-        		<i class="fas fa-redo-alt"></i>
-        	</div>
-        </section>
+						<div class="restart">
+						<i class="fas fa-redo-alt"></i>
+					</div>
+				</section>
 
-        <ul class="deck">
-            <li class="card">
-                <i class="far fa-gem"></i>
-            </li>
-            <li class="card">
-                <i class="far fa-paper-plane"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="far fa-gem"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="far fa-paper-plane"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
-            </li>
-        </ul>
-    </div>
+				<ul class="deck">
+						<li class="card">
+								<i class="far fa-gem"></i>
+						</li>
+						<li class="card">
+								<i class="far fa-paper-plane"></i>
+						</li>
+						<li class="card">
+								<i class="fa fa-anchor"></i>
+						</li>
+						<li class="card">
+								<i class="fa fa-bolt"></i>
+						</li>
+						<li class="card">
+								<i class="fa fa-cube"></i>
+						</li>
+						<li class="card">
+								<i class="fa fa-anchor"></i>
+						</li>
+						<li class="card">
+								<i class="fa fa-leaf"></i>
+						</li>
+						<li class="card">
+								<i class="fa fa-bicycle"></i>
+						</li>
+						<li class="card">
+								<i class="far fa-gem"></i>
+						</li>
+						<li class="card">
+								<i class="fa fa-bomb"></i>
+						</li>
+						<li class="card">
+								<i class="fa fa-leaf"></i>
+						</li>
+						<li class="card">
+								<i class="fa fa-bomb"></i>
+						</li>
+						<li class="card">
+								<i class="fa fa-bolt"></i>
+						</li>
+						<li class="card">
+								<i class="fa fa-bicycle"></i>
+						</li>
+						<li class="card">
+								<i class="far fa-paper-plane"></i>
+						</li>
+						<li class="card">
+								<i class="fa fa-cube"></i>
+						</li>
+				</ul>
+		</div>
 
-    <script src="js/app.js"></script>
+		<script src="js/app.js"></script>
 </body>
 </html>
