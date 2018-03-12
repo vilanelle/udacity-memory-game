@@ -172,15 +172,20 @@ h1 {
 		padding: 15px;
 	}
 	.deck .card {
-		width: 90px;
-		height: 90px;
+		width: 110px;
+		height: 110px;
 	}
 	.modal-content {
 		width: 80%;
 	}
 }
-
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) {
+	.deck .card {
+		width: 93px;
+		height: 93px;
+	}
+}
+@media screen and (max-width: 460px) {
 	.deck {
 		height: 450px;
 		min-height: 450px;
@@ -203,6 +208,7 @@ h1 {
 		height: 450px;
 		min-height: 450px;
 		width: 98%;
+		min-width: 315px;
 		padding: 10px;
 		box-shadow: none;
 	}
@@ -212,5 +218,6 @@ h1 {
 	}
 	.score-panel {
 		width: 100%;
+		min-width: 315px;
 	}
 }

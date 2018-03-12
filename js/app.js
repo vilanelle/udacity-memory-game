@@ -55,15 +55,15 @@ const updateMoves = () => {
 const updateRating = () => {
 	if (moves > 10) {
 		stars[2].innerHTML = '<i class="far fa-star"></i>';
-		rating--;
+		rating = 2;
 	}
 	if (moves > 14) {
 		stars[1].innerHTML = '<i class="far fa-star"></i>';
-		rating--;
+		rating = 1;
 	}
 	if (moves > 20) {
 		stars[0].innerHTML = '<i class="far fa-star"></i>';
-		rating--;
+		rating = 0;
 	}
 }
 
@@ -97,7 +97,9 @@ const resetGame = () => {
 	updateMoves();
 	openCards.length = 0;
 	correctGuesses = 0;
+	stopTimer();
 	resetTimer();
+	startGame();
 }
 
 // Reset with confirmation
@@ -125,6 +127,7 @@ const playAgain = () => {
 
 const notPlayAgain = () => {
 	popup.style.display = 'none';
+	stopTimer();
 }
 
 
@@ -143,6 +146,9 @@ const handleCardClick = (e) => {
 	if (openCards.length === 1) {
 		shuffledCards.forEach(card => card.removeEventListener('click', handleCardClick));
 		openCards.push(cardClicked);
+		moves++;
+		updateMoves();
+		updateRating();
 		if (openCards[0].isEqualNode(cardClicked)) {
 			openCards.forEach(card => {
 				card.classList.add('match')
@@ -155,10 +161,7 @@ const handleCardClick = (e) => {
 			correctGuesses++;
 			// check for win
 			if (correctGuesses === 8) {
-				moves++;
 				togglePopup();
-				updateRating();
-				updateMoves();
 				stopTimer();
 				return;
 			}
@@ -170,9 +173,6 @@ const handleCardClick = (e) => {
 					card.classList.remove('open', 'show');
 				});
 				openCards.length = 0;
-				moves++;
-				updateRating();
-				updateMoves();
 				shuffledCards.forEach(card => {
 					if (!card.classList.contains('match')) {
 						card.addEventListener('click', handleCardClick);
@@ -211,6 +211,7 @@ const resetTimer = () => {
 
 // start game
 const startGame = () => {
+	resetTimer();	
 	shuffleAndDisplayCards(cards);
 	startTimer();
 	updateMoves();
