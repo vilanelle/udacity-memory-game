@@ -3,7 +3,7 @@
 *A simple web-based version of the classic memory game.*
 
 ## Setup
-No setup or installation necessary.
+No setup or installation necessary. Live version available at: https://vilanelle.github.io/udacity-memory-game/
 
 ### Getting started & usage
 
